@@ -11,7 +11,7 @@ public class MagicCards {
 	public static void progIntro () {
 		System.out.println("Think of a number between 1 - 21\n Keep the number to yourself\n");
 	}
-	public static int selectStack() {
+	public static int selectStack() {   // function for selecting which stack contains chosen number
 		int selectedStack =5;
 		do{
 			System.out.println("\nWhich stack has your number?");
@@ -19,7 +19,7 @@ public class MagicCards {
 		}while(selectedStack >=3);
 		return selectedStack;
 	}
-	public static void masterStackPop () {
+	public static void masterStackPop () { //Populating the initial 21 cards
 		for (int i=0; i < masterStack.length; i++) {
 			masterStack[i]=i+1;
 //			System.out.print(masterStack[i]+" ");
@@ -32,7 +32,7 @@ public class MagicCards {
 		}*/
 		
 	}
-	public static void dealMasterStack () {
+	public static void dealMasterStack () { //dealing the initial 21 cards in 3 columns, 1 row at a time
 		int i=0;
 		//int y=0;
 		while (i<20) {
@@ -45,7 +45,7 @@ public class MagicCards {
 			}
 		}
 	}
-	public static void printCardStack() {
+	public static void printCardStack() {// self explanatory
 		for (int x=0; x < cardStack[x].length; x++) {
 			System.out.print("Stack"+x+": ");
 			for (int y=0; y<cardStack.length;y++) {
@@ -54,7 +54,7 @@ public class MagicCards {
 			System.out.println();
 		}
 	}
-	public static void redealMasterStack(int i) {
+	public static void redealMasterStack(int i) {//merging each card stack backwards putting the selected stack in the middle.
 		int x =0;
 		int MS1 =0;
 		while(x<3) {
@@ -113,7 +113,7 @@ public class MagicCards {
 		MagicCards.masterStackPop();
 		
 		int n=0;
-		while (n<4) {
+		while (n<4) { //asking 4 times to be safe
 			dealMasterStack ();
 			printCardStack();
 			int userInput = MagicCards.selectStack();
